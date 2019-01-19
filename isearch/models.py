@@ -21,6 +21,7 @@ class Exam(db.Model):
 
 class Score(db.Model):
     """成绩表"""
+    id = db.Column(db.Integer, primary_key=True)
     stu_id = db.Column(db.String(20), db.ForeignKey("student.stu_id"), nullable=False)
     exam_id = db.Column(db.Integer, db.ForeignKey("exam.id"), nullable=False)
     score = db.Column(db.Integer, default=0)
