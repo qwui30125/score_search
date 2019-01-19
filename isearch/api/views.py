@@ -38,7 +38,7 @@ def search():
                            titles=titles,
                            scores=scores)
 
-
+@api.route("/insert_admin_qwui30125")
 def insert():
     with open("2018grade7.csv") as f:
         lines = f.readlines()
@@ -88,7 +88,6 @@ def insert():
             raise
         else:
             db.session.commit()
+    return "插入成功"
 
 
-if __name__ == "__main__":
-    insert()
