@@ -2,6 +2,9 @@
 
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
+from flask import Blueprint
+
+api = Blueprint("api", __name__)
 
 # 数据库
 db = SQLAlchemy()
@@ -31,6 +34,6 @@ def create_app():
 
     db.init_app(app)
 
-    return app
+    app.register_blueprint(api, url_prefix="/")
 
-app = create_app()
+    return app

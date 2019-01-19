@@ -1,12 +1,12 @@
 from flask import render_template, request
-from isearch import app
+from isearch import api
 
-@app.route("/")
-@app.route("/index")
+@api.route("")
+@api.route("index")
 def index():
     return render_template("index.html")
 
-@app.route("/search", methods=["POST"])
+@api.route("search", methods=["POST"])
 def search():
     form = request.form
     stu_name = form.get("stu_name")
@@ -34,5 +34,3 @@ def search():
                            student=student,
                            titles=titles,
                            scores=scores)
-
-
