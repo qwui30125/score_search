@@ -17,18 +17,19 @@ class Exam(db.Model):
     __tablename__ = "exam"
     id = db.Column(db.Integer, primary_key=True) # 
     name = db.Column(db.String(60), unique=True, nullable=False)
+    projects = db.Column(db.String(150))
 
 
-class MathScore(Score):
+class MathScore(db.Model):
     """数学成绩表"""
     __tablename__ = "mathscore"
-        id = db.Column(db.Integer, primary_key=True)
+    id = db.Column(db.Integer, primary_key=True)
     stu_id = db.Column(db.String(20), db.ForeignKey("student.stu_id"), nullable=False)
     exam_id = db.Column(db.Integer, db.ForeignKey("exam.id"), nullable=False)
     score = db.Column(db.Integer, default=0)
 
 
-class ChineseScore(Score):
+class ChineseScore(db.Model):
     """语文成绩表"""
     __tablename__ = "chinesescore"
     id = db.Column(db.Integer, primary_key=True)
@@ -37,7 +38,7 @@ class ChineseScore(Score):
     score = db.Column(db.Integer, default=0)
 
 
-class EnglishScore(Score):
+class EnglishScore(db.Model):
     """英语成绩表"""
     __tablename__ = "englishscore"
     id = db.Column(db.Integer, primary_key=True)
@@ -46,7 +47,7 @@ class EnglishScore(Score):
     score = db.Column(db.Integer, default=0)
 
 
-class WrittenScore(Score):
+class WrittenScore(db.Model):
     """数学成绩表"""
     __tablename__ = "writtenscore"
     id = db.Column(db.Integer, primary_key=True)
@@ -55,7 +56,7 @@ class WrittenScore(Score):
     score = db.Column(db.Integer, default=0)
 
 
-class SpeakingScore(Score):
+class SpeakingScore(db.Model):
     """数学成绩表"""
     __tablename__ = "speakingscore"
     id = db.Column(db.Integer, primary_key=True)
@@ -64,7 +65,7 @@ class SpeakingScore(Score):
     score = db.Column(db.Integer, default=0)
 
 
-class PoliticalScore(Score):
+class PoliticalScore(db.Model):
     """数学成绩表"""
     __tablename__ = "politicalscore"
     id = db.Column(db.Integer, primary_key=True)
@@ -73,7 +74,7 @@ class PoliticalScore(Score):
     score = db.Column(db.Integer, default=0)
 
 
-class HistoryScore(Score):
+class HistoryScore(db.Model):
     """数学成绩表"""
     __tablename__ = "historyscore"
     id = db.Column(db.Integer, primary_key=True)
@@ -82,7 +83,7 @@ class HistoryScore(Score):
     score = db.Column(db.Integer, default=0)
 
 
-class GeographyScore(Score):
+class GeographyScore(db.Model):
     """数学成绩表"""
     __tablename__ = "geographyscore"
     id = db.Column(db.Integer, primary_key=True)
@@ -91,7 +92,7 @@ class GeographyScore(Score):
     score = db.Column(db.Integer, default=0)
 
 
-class BiologicalScore(Score):
+class BiologicalScore(db.Model):
     """生物成绩表"""
     __tablename__ = "biologicalscore"
     id = db.Column(db.Integer, primary_key=True)
@@ -100,7 +101,7 @@ class BiologicalScore(Score):
     score = db.Column(db.Integer, default=0)
 
 
-class AntidrugScore(Score):
+class AntidrugScore(db.Model):
     """禁毒成绩表"""
     __tablename__ = "antidrugscore"
     id = db.Column(db.Integer, primary_key=True)
@@ -109,7 +110,7 @@ class AntidrugScore(Score):
     score = db.Column(db.Integer, default=0)
 
 
-class TotalScore(Score):
+class TotalScore(db.Model):
     """总成绩表"""
     __tablename__ = "totalscore"
     id = db.Column(db.Integer, primary_key=True)
