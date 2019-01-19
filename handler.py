@@ -1,3 +1,5 @@
+# coding:utf-8
+
 def getScores():
     with open("2018秋七年级学生成绩1.17.csv") as f:
         lines = f.readlines()

@@ -1,5 +1,8 @@
+# coding:utf-8
+
 from flask import render_template, request
 from . import api
+from models import *
 
 @api.route("/")
 @api.route("/index")
