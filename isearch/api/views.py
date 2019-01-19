@@ -2,7 +2,7 @@
 
 from flask import render_template, request
 from . import api
-from models import *
+from isearch.models import *
 
 @api.route("/")
 @api.route("/index")

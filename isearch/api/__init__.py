@@ -4,7 +4,7 @@ from flask import Blueprint
 
 
 # 创建蓝图对象
-app_admin = Blueprint("admin", __name__, static_folder="./static", template_folder="./templates")
+api = Blueprint("api", __name__)
 
 
 # 导入蓝图的视图
