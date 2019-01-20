@@ -15,7 +15,10 @@ def search():
     stu_name = form.get("stu_name")
     stu_id = form.get("stu_id")
 
-    student = Student.query.filter_by(stu_id=stu_id, stu_name=stu_name).first()
+    try:
+        student = Student.query.filter_by(stu_id=stu_id, stu_name=stu_name).first()
+    except:
+        return rander_template("error.html")
     if not student:
         return rander_template("error.html")
 
