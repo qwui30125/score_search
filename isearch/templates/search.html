@@ -1,24 +1,34 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+<html lang="en"><head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<link rel="stylesheet" href="https://res.wx.qq.com/open/libs/weui/1.1.3/weui.min.css">
     <title>Document</title>
 </head>
 <body>
-    <h1>成绩单</h1>
-    <p>
-        <span>学生姓名：{{ student.stu_name }}</span>
-        <span>学生考号：{{ student.stu_id }}</span>   
-    </p>
-    <ul>
-        {% for i in range(length) %}
-        <li>
-           <span>{{titles[i]}}</span>
-           <span>{{scores[i].score}}</span>
-        </li> 
-        {% endfor %}
-    </ul>
-</body>
-</html>
+		<div style="padding:30px 40px 10px;">
+      <h1 style="text-align: left;font-size: 20px;font-weight: 400;">成绩单</h1>
+    </div>
+		<div class="weui-cells">
+			<div class="weui-cell">
+				<div class="weui-cell__bd">
+						<p>学生姓名</p>
+				</div>
+				<div class="weui-cell__ft">{{ student.stu_name }}</div>
+			</div>
+			<div class="weui-cell">
+				<div class="weui-cell__bd">
+						<p>学生考号</p>
+				</div>
+				<div class="weui-cell__ft">{{ student.stu_id }}</div>
+			</div>
+			{% for i in range(length) %}
+			<div class="weui-cell">
+				<div class="weui-cell__bd">
+					<p>{{titles[i]}}</p>
+				</div>
+				<div class="weui-cell__ft">{{scores[i].score}}</div>
+			</div>
+      {% endfor %}
+		</div>
+</body></html>
