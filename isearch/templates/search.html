@@ -13,11 +13,12 @@
         <span>学生考号：{{ student.stu_id }}</span>   
     </p>
     <ul>
-        {% for title, score in zip(titles, scores) %}
+        {% for i in range(length) %}
         <li>
-           <span>title</span>
-           <span>score</span>
+           <span>{{titles[i]}}</span>
+           <span>{{scores[i].score}}</span>
         </li> 
+        {% endfor %}
     </ul>
 </body>
 </html>

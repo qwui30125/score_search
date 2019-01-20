@@ -8,7 +8,7 @@ class Student(db.Model):
     __tablename__ = "student"
     id = db.Column(db.Integer, primary_key=True) # 
     stu_id = db.Column(db.String(20), unique=True, nullable=False)
-    stu_name = db.Column(db.String(32), unique=True, nullable=False)
+    stu_name = db.Column(db.String(32), nullable=False)
     stu_class = db.Column(db.String(20))
 
 
@@ -17,7 +17,6 @@ class Exam(db.Model):
     __tablename__ = "exam"
     id = db.Column(db.Integer, primary_key=True) # 
     name = db.Column(db.String(60), unique=True, nullable=False)
-    projects = db.Column(db.String(150))
 
 
 class MathScore(db.Model):
