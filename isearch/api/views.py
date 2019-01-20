@@ -17,7 +17,7 @@ def search():
 
     student = Student.query.filter_by(stu_id=stu_id, stu_name=stu_name).first()
     if not student:
-        return "No Found"
+        return rander_template("error.html")
 
     mathscore = MathScore.query.filter_by(stu_id=stu_id).first()
     chinesescore = ChineseScore.query.filter_by(stu_id=stu_id).first()
