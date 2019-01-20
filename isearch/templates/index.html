@@ -1,23 +1,34 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+<html lang="en"><head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<link rel="stylesheet" href="https://res.wx.qq.com/open/libs/weui/1.1.3/weui.min.css">
     <title>Document</title>
 </head>
 <body>
-    <h1>查分系统</h1>
-    <form action="search" method="POST">
-        <p>
-            姓名
-            <input type="text" name="stu_name">
-        </p>
-        <p>
-            学号
-            <input type="text" name="stu_id">
-        </p>
-        <input type="submit" value="提交">
-    </form>
-</body>
-</html>
+		<div style="padding:30px 40px 10px;">
+      <h1 style="text-align: left;font-size: 20px;font-weight: 400;">查分系统</h1>
+    </div>
+		<form action="search" method="POST">
+    <div class="weui-cells weui-cells_form">
+			<div class="weui-cell">
+				<div class="weui-cell__hd"><label class="weui-label">姓名</label></div>
+				<div class="weui-cell__bd">
+					<input name="stu_name" class="weui-input" type="text" placeholder="请输入姓名">
+				</div>
+			</div>
+			<div class="weui-cell">
+				<div class="weui-cell__hd"><label class="weui-label">考号</label></div>
+				<div class="weui-cell__bd">
+					<input name="stu_id" class="weui-input" type="number" pattern="[0-9]*" placeholder="请输入考号">
+				</div>
+			</div>
+		</div>
+		<div class="weui-btn-area">
+			<button type="submit" style="width: 100%; border: none;"><a class="weui-btn weui-btn_primary" id="showTooltips">确定</a>
+			</button>
+		</div>
+		</form>
+
+
+</body></html>
