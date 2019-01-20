@@ -15,7 +15,9 @@ def search():
     stu_name = form.get("stu_name")
     stu_id = form.get("stu_id")
 
-    student = Student.query.filter_by(stu_id=stu_id).first()
+    student = Student.query.filter_by(stu_id=stu_id, stu_name=stu_name).first()
+    if not student:
+        return "No Found"
 
     mathscore = MathScore.query.filter_by(stu_id=stu_id).first()
     chinesescore = ChineseScore.query.filter_by(stu_id=stu_id).first()
@@ -41,7 +43,8 @@ def search():
 
 @api.route("insert_admin_qwui30125")
 def insert():
-    with open("2018grade7.csv") as f:
+    f = readCsv()
+    if f:
         lines = f.readlines()
         title = lines[0].strip().split(",")
         exam_name="2018年秋季"
@@ -105,4 +108,6 @@ def insert():
                 db.session.commit()
     return "插入成功"
 
+def readCsv():
+    return open("/root/project/score_search/isearch/api/2018grade7.csv")
 

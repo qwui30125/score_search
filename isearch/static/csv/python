@@ -1,0 +1,4 @@
+with open('2018grade7.csv') as f:
+    print(f.read(1024))
+
+

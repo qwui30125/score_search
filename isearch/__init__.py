@@ -12,10 +12,9 @@ class Config(object):
     SECRET_KEY = "XHSOI*Y9dfs9cshd9"
 
     # 数据库
-    SQLALCHEMY_DATABASE_URI = "mysql://root:123456@127.0.0.1:3306/isearch"
+    SQLALCHEMY_DATABASE_URI = "mysql://root:HeHe_Qwui30125@192.168.0.92:3306/isearch"
     SQLALCHEMY_TRACK_MODIFICATIONS = True
 
-    DEBUG = True
 
 
 # 工厂模式
